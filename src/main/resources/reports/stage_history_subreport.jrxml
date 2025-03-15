@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="StageHistorySubreport" pageWidth="535" pageHeight="100" columnWidth="515"
+              leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10">
+
+    <field name="stage.name" class="java.lang.String"/>
+    <field name="id.startOfStage" class="java.time.LocalDateTime"/>
+    <field name="user.id" class="java.lang.Long"/>
+    <field name="user.name" class="java.lang.String"/>
+
+    <columnHeader>
+        <band height="20">
+            <staticText>
+                <reportElement x="0" y="0" width="150" height="20"/>
+                <textElement><font isBold="true"/></textElement>
+                <text><![CDATA[Stage Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="160" y="0" width="180" height="20"/>
+                <textElement><font isBold="true"/></textElement>
+                <text><![CDATA[Start Date]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="350" y="0" width="50" height="20"/>
+                <textElement><font isBold="true"/></textElement>
+                <text><![CDATA[User ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="410" y="0" width="120" height="20"/>
+                <textElement><font isBold="true"/></textElement>
+                <text><![CDATA[User Name]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{stage.name}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="160" y="0" width="180" height="20"/>
+                <textFieldExpression><![CDATA[$F{id.startOfStage}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="350" y="0" width="50" height="20"/>
+                <textFieldExpression><![CDATA[$F{user.id}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="410" y="0" width="120" height="20"/>
+                <textFieldExpression><![CDATA[$F{user.name}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+</jasperReport>
